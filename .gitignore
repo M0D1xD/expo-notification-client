@@ -2,3 +2,16 @@ node_modules/
 build/
 *.log
 .DS_Store
+
+# example app
+example/node_modules/
+example/.expo/
+example/dist/
+example/android/
+example/ios/
+example/expo-env.d.ts
+example/.env*.local
+example/google-services.json
+example/GoogleService-Info.plist
+example/*-firebase-adminsdk-*.json
+example/service-account*.json

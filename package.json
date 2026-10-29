@@ -1,20 +1,31 @@
 {
   "name": "expo-notification-client",
   "version": "0.0.0",
-  "private": true,
   "description": "React Native client for m0d1xd/expo-notification: registers the device and reports received and opened events per notification.",
   "license": "MIT",
   "author": "Mohammed Zakout <info@zakout.tech>",
   "repository": "github:M0D1xD/expo-notification-client",
-  "keywords": ["expo", "expo-notifications", "push-notifications", "laravel", "analytics"],
+  "homepage": "https://github.com/M0D1xD/expo-notification-client#readme",
+  "bugs": "https://github.com/M0D1xD/expo-notification-client/issues",
+  "keywords": [
+    "expo",
+    "expo-notifications",
+    "push-notifications",
+    "laravel",
+    "analytics"
+  ],
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "react-native": "src/index.ts",
-  "files": ["build", "src"],
+  "files": [
+    "build",
+    "src"
+  ],
   "scripts": {
     "build": "rm -rf build && tsc -p tsconfig.build.json",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun test && bun run typecheck && bun run build"
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": ">=2.0.0",
