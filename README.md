@@ -31,13 +31,19 @@ configure another), and your Firebase config for Android:
 {
   "expo": {
     "android": { "googleServicesFile": "./google-services.json" },
-    "plugins": [["expo-notifications", { "defaultChannel": "default" }]]
+    "plugins": [
+      ["expo-notifications", { "defaultChannel": "default", "enableBackgroundRemoteNotifications": true }]
+    ]
   }
 }
 ```
 
 Android pushes reach the device through FCM, via Expo: upload your FCM service-account key to your project on
 expo.dev (or with `eas credentials`). Push tokens need the EAS `projectId` (`extra.eas.projectId`, set by `eas init`).
+
+`enableBackgroundRemoteNotifications` adds `remote-notification` to the iOS `UIBackgroundModes`; without it
+`defineBackgroundTask()` fails on iOS with `E_BACKGROUND_REMOTE_NOTIFICATIONS_DISABLED`. Run `npx expo prebuild`
+(or rebuild) after changing it.
 
 ## Setup
 
