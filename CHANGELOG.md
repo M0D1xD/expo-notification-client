@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0](https://github.com/M0D1xD/expo-notification-client/compare/v0.1.0...v0.2.0) (2026-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* install and import expo-notifications-client instead of expo-notification-client.
+
+### Features
+
+* rename the package to expo-notifications-client ([e6852f6](https://github.com/M0D1xD/expo-notification-client/commit/e6852f61490875b23e6f538a8dfb3705338fb5a1))
+
 ## 0.1.0 (2026-10-29)
 
 
