@@ -6,7 +6,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useNotificationTracking } from '@/hooks/use-notification-tracking';
-import type { TrackedEvent } from 'expo-notification-client';
+import type { TrackedEvent } from 'expo-notifications-client';
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL ?? '';
 
@@ -18,7 +18,7 @@ export default function TrackingScreen() {
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={styles.content}>
-          <ThemedText type="subtitle">expo-notification-client</ThemedText>
+          <ThemedText type="subtitle">expo-notifications-client</ThemedText>
 
           <ThemedView type="backgroundElement" style={styles.card}>
             <Row label="API" value={API_URL || 'EXPO_PUBLIC_API_URL not set'} />

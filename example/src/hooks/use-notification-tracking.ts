@@ -8,7 +8,7 @@ import {
   unregister,
   type Identity,
   type TrackedEvent,
-} from 'expo-notification-client';
+} from 'expo-notifications-client';
 import { useCallback, useEffect, useState } from 'react';
 import { AppState } from 'react-native';
 

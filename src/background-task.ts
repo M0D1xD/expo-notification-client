@@ -19,7 +19,7 @@ export function defineBackgroundTask(): void {
     handleBackgroundNotification(data, error),
   );
   Notifications.registerTaskAsync(BACKGROUND_TASK).catch((error) =>
-    console.error('<ERROR!expo-notification-client> registerTaskAsync', error),
+    console.error('<ERROR!expo-notifications-client> registerTaskAsync', error),
   );
 }
 
@@ -32,7 +32,7 @@ export async function handleBackgroundNotification(
   error: TaskManager.TaskManagerError | null,
 ): Promise<Notifications.BackgroundNotificationTaskResult> {
   if (error) {
-    console.error('<ERROR!expo-notification-client> background task', error);
+    console.error('<ERROR!expo-notifications-client> background task', error);
     return Notifications.BackgroundNotificationTaskResult.Failed;
   }
   if ('actionIdentifier' in data) {

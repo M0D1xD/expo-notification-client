@@ -1,5 +1,5 @@
 {
-  "name": "expo-notification-client",
+  "name": "expo-notifications-client",
   "version": "0.1.0",
   "description": "React Native client for m0d1xd/expo-notification: registers the device and reports received and opened events per notification.",
   "license": "MIT",

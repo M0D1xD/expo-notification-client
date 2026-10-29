@@ -54,7 +54,7 @@ export async function registerToken(pushToken: string): Promise<Identity> {
 export async function getExpoPushToken(devicePushToken?: Notifications.DevicePushToken): Promise<string> {
   const projectId =
     getConfig().projectId ?? Constants.expoConfig?.extra?.eas?.projectId ?? Constants.easConfig?.projectId;
-  if (!projectId) throw new Error('expo-notification-client: no EAS projectId; pass `projectId` to configure().');
+  if (!projectId) throw new Error('expo-notifications-client: no EAS projectId; pass `projectId` to configure().');
   const { data } = await Notifications.getExpoPushTokenAsync({
     projectId,
     devicePushToken: devicePushToken ?? (await Notifications.getDevicePushTokenAsync()),

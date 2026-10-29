@@ -8,7 +8,7 @@ export class ApiError extends Error {
     readonly status: number,
     readonly body: string,
   ) {
-    super(`expo-notification-client: HTTP ${status}: ${body.slice(0, 200)}`);
+    super(`expo-notifications-client: HTTP ${status}: ${body.slice(0, 200)}`);
   }
 }
 

@@ -1,12 +1,14 @@
-# expo-notification-client
+# expo-notifications-client
 
-[![npm](https://img.shields.io/npm/v/expo-notification-client)](https://www.npmjs.com/package/expo-notification-client)
+[![npm](https://img.shields.io/npm/v/expo-notifications-client)](https://www.npmjs.com/package/expo-notifications-client)
 [![CI](https://github.com/M0D1xD/expo-notification-client/actions/workflows/ci.yml/badge.svg)](https://github.com/M0D1xD/expo-notification-client/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 React Native client for the Laravel package [m0d1xd/expo-notification](https://github.com/M0D1xD/expo-notification).
 It registers the device, shows the server's tracked pushes, and reports what happened to each notification:
 received and opened.
+
+> Formerly published as `expo-notification-client` (0.1.0). Install `expo-notifications-client` instead.
 
 > **Status: 0.x.** Android is verified on real devices; iOS is not tested yet.
 
@@ -20,7 +22,7 @@ received and opened.
 ## Installation
 
 ```bash
-npx expo install expo-notification-client expo-notifications expo-task-manager expo-application expo-device \
+npx expo install expo-notifications-client expo-notifications expo-task-manager expo-application expo-device \
   expo-constants @react-native-async-storage/async-storage
 ```
 
@@ -52,7 +54,7 @@ runs only module-scope code, so both calls must be at module scope:
 
 ```ts
 // src/push.ts, imported first by index.ts
-import { configure, defineBackgroundTask } from 'expo-notification-client';
+import { configure, defineBackgroundTask } from 'expo-notifications-client';
 
 configure({
   apiUrl: 'https://api.example.com',
@@ -74,7 +76,7 @@ import 'expo-router/entry';
 Then in the app:
 
 ```ts
-import { logout, register, startTracking } from 'expo-notification-client';
+import { logout, register, startTracking } from 'expo-notifications-client';
 
 useEffect(() => {
   register(); // asks for permission once, then registers the device; call again after sign-in
@@ -122,7 +124,7 @@ bun run build
 ```
 
 The [example app](example) uses this folder's `src/` directly: its `metro.config.js` resolves
-`expo-notification-client` to the parent folder and hides this package's own `node_modules`, so the app's single copy
+`expo-notifications-client` to the parent folder and hides this package's own `node_modules`, so the app's single copy
 of react-native is used. It pairs with the [Laravel example](https://github.com/M0D1xD/expo-notification/tree/main/example).
 
 ## License

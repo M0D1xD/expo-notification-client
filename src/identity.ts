@@ -10,7 +10,7 @@ const IDENTITY_KEY = 'expoNotificationClient.identity';
 /** Platform install ID: Android ID, or identifierForVendor on iOS. */
 export async function getDeviceId(): Promise<string> {
   const id = Platform.OS === 'android' ? Application.getAndroidId() : await Application.getIosIdForVendorAsync();
-  if (!id) throw new Error('expo-notification-client: no platform install ID available.');
+  if (!id) throw new Error('expo-notifications-client: no platform install ID available.');
   return id;
 }
 
