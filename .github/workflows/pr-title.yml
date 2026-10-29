@@ -10,7 +10,7 @@ permissions:
 jobs:
   lint:
     name: Lint PR title
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Validate PR title
         uses: amannn/action-semantic-pull-request@v6
