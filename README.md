@@ -1,10 +1,14 @@
 # expo-notification-client
 
+[![npm](https://img.shields.io/npm/v/expo-notification-client)](https://www.npmjs.com/package/expo-notification-client)
+[![CI](https://github.com/M0D1xD/expo-notification-client/actions/workflows/ci.yml/badge.svg)](https://github.com/M0D1xD/expo-notification-client/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 React Native client for the Laravel package [m0d1xd/expo-notification](https://github.com/M0D1xD/expo-notification).
 It registers the device, shows the server's tracked pushes, and reports what happened to each notification:
 received and opened.
 
-> **Status: early development**, not published to npm yet. Android is verified on real devices; iOS is not tested yet.
+> **Status: 0.x.** Android is verified on real devices; iOS is not tested yet.
 
 ## Requirements
 
@@ -12,6 +16,28 @@ received and opened.
   and `@react-native-async-storage/async-storage` installed in the app.
 - A development or release build (push notifications do not work in Expo Go).
 - The Laravel app with `m0d1xd/expo-notification` installed and `tracking.enabled` on (the default).
+
+## Installation
+
+```bash
+npx expo install expo-notification-client expo-notifications expo-task-manager expo-application expo-device \
+  expo-constants @react-native-async-storage/async-storage
+```
+
+In `app.json`, add the `expo-notifications` plugin with the same channel the client uses (`default` unless you
+configure another), and your Firebase config for Android:
+
+```json
+{
+  "expo": {
+    "android": { "googleServicesFile": "./google-services.json" },
+    "plugins": [["expo-notifications", { "defaultChannel": "default" }]]
+  }
+}
+```
+
+Android pushes reach the device through FCM, via Expo: upload your FCM service-account key to your project on
+expo.dev (or with `eas credentials`). Push tokens need the EAS `projectId` (`extra.eas.projectId`, set by `eas init`).
 
 ## Setup
 
@@ -89,8 +115,9 @@ bun run typecheck
 bun run build
 ```
 
-The example app is [expo-notifications-example](../expo-notifications-example). It links this folder; its
-`metro.config.js` hides this package's own `node_modules` so the app's single copy of react-native is used.
+The [example app](example) uses this folder's `src/` directly: its `metro.config.js` resolves
+`expo-notification-client` to the parent folder and hides this package's own `node_modules`, so the app's single copy
+of react-native is used. It pairs with the [Laravel example](https://github.com/M0D1xD/expo-notification/tree/main/example).
 
 ## License
 
