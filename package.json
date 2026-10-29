@@ -1,0 +1,41 @@
+{
+  "name": "expo-notification-client",
+  "version": "0.0.0",
+  "private": true,
+  "description": "React Native client for m0d1xd/expo-notification: registers the device and reports received and opened events per notification.",
+  "license": "MIT",
+  "author": "Mohammed Zakout <info@zakout.tech>",
+  "repository": "github:M0D1xD/expo-notification-client",
+  "keywords": ["expo", "expo-notifications", "push-notifications", "laravel", "analytics"],
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "react-native": "src/index.ts",
+  "files": ["build", "src"],
+  "scripts": {
+    "build": "rm -rf build && tsc -p tsconfig.build.json",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@react-native-async-storage/async-storage": ">=2.0.0",
+    "expo-application": ">=57.0.0",
+    "expo-constants": ">=57.0.0",
+    "expo-device": ">=57.0.0",
+    "expo-notifications": ">=57.0.0",
+    "expo-task-manager": ">=57.0.0",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@types/bun": "latest",
+    "@types/react": "~19.3.0",
+    "expo-application": "~58.1.2",
+    "expo-constants": "~58.0.14",
+    "expo-device": "~58.0.5",
+    "expo-notifications": "~58.1.7",
+    "expo-task-manager": "~58.0.12",
+    "react": "19.3.0",
+    "react-native": "0.88.1",
+    "typescript": "~6.0.3"
+  }
+}
