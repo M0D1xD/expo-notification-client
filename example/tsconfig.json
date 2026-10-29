@@ -9,7 +9,7 @@
       "@/assets/*": [
         "./assets/*"
       ],
-      "expo-notification-client": [
+      "expo-notifications-client": [
         "../src/index.ts"
       ]
     }

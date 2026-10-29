@@ -33,7 +33,7 @@ export function configure(config: ClientConfig): void {
 }
 
 export function getConfig(): ResolvedConfig {
-  if (!current) throw new Error('expo-notification-client: call configure() before using the SDK.');
+  if (!current) throw new Error('expo-notifications-client: call configure() before using the SDK.');
   return current;
 }
 

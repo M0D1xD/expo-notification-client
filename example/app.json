@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-notification-client example",
-    "slug": "expo-notification-client-example",
+    "name": "expo-notifications-client example",
+    "slug": "expo-notifications-client-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -41,7 +41,8 @@
       [
         "expo-notifications",
         {
-          "defaultChannel": "default"
+          "defaultChannel": "default",
+          "enableBackgroundRemoteNotifications": true
         }
       ],
       [

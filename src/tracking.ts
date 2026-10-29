@@ -14,7 +14,7 @@ export const eventQueue = createEventQueue({
   async post(events) {
     const identity = await readIdentity();
     // Without a registered pair the server would reject the batch; keep it queued instead.
-    if (!identity) throw new Error('expo-notification-client: device not registered yet.');
+    if (!identity) throw new Error('expo-notifications-client: device not registered yet.');
     await api.sendEvents(identity, events);
   },
 });

@@ -1,5 +1,5 @@
 {
-  "name": "expo-notification-client-example",
+  "name": "expo-notifications-client-example",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
